@@ -33,7 +33,7 @@ func createMutatingWebhookConfiguration(caPEM *bytes.Buffer) error {
 		return err
 	}
 	mutatingWebhookConfigV1Client := clientset.AdmissionregistrationV1()
-	metaName := "sidecar-go-mutating-webhook-configuration"
+	metaName := "sidecar-injector-mutating-webhook-configuration"
 	url := fmt.Sprintf("https://%s:%d/inject", hostname, port)
 
 	mutatingWebhookConfig := &admissionregistrationv1.MutatingWebhookConfiguration{
